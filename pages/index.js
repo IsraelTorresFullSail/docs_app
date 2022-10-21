@@ -10,13 +10,12 @@ import {
   Paper,
   Typography,
 } from '@mui/material'
+import Text from '../components/text/Text'
 
 const steps = [
   {
-    label: 'Select campaign settings',
-    description: `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`,
+    label: 'Step 1: Login to cPanel',
+    description: `Login to DR cPanel (yourdigitalresource1.com). You can find the credentials on Basecamp on the DR Team Web: Passwords document`,
   },
   {
     label: 'Create an ad group',
@@ -58,22 +57,25 @@ export default function Home() {
           {steps.map((step, index) => (
             <Step key={step.label}>
               <StepLabel
+                sx={{ fontSize: '1.25rem' }}
                 optional={
                   index === 2 ? (
                     <Typography variant='caption'>Last step</Typography>
                   ) : null
                 }
               >
-                {step.label}
+                <Text variant='h3' font='secondary'>
+                  {step.label}
+                </Text>
               </StepLabel>
               <StepContent>
-                <Typography>{step.description}</Typography>
+                <Text>{step.description}</Text>
                 <Box sx={{ mb: 2 }}>
                   <div>
                     <Button
                       variant='contained'
                       onClick={handleNext}
-                      sx={{ mt: 1, mr: 1 }}
+                      sx={{ mt: 3, mr: 1 }}
                     >
                       {index === steps.length - 1 ? 'Finish' : 'Continue'}
                     </Button>

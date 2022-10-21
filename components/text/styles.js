@@ -35,7 +35,7 @@ export const StyledText = (el) =>
       color: theme.palette[color]?.main || theme.palette.text.main,
       fontSize: !elementsWithSize.includes(el)
         ? desktopSizes[el] || 'inherit'
-        : fontSize || 'clamp(1rem, 1.25rem, 1.25rem)',
+        : fontSize || 'clamp(1rem, 1.125rem, 1.125rem)',
       textDecoration: decoration || 'none',
       textTransform: textTransform || 'none',
       lineHeight: lineHeights[el] || lineheight || '36px',
@@ -46,7 +46,7 @@ export const StyledText = (el) =>
       [theme.breakpoints.down('sm')]: {
         fontSize: !elementsWithSize.includes(el)
           ? mobileSizes[el] || 'inherit'
-          : fontSize || 'clamp(1rem, 1.25rem, 1rem)',
+          : fontSize || 'clamp(1rem, 1.125rem, 1rem)',
       },
     })
   )
